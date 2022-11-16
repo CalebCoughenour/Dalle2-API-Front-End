@@ -1,7 +1,7 @@
 /* Hover Effects */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 995px) {
   .home-card:hover {
     color: #61b38f;
-    text-shadow: 2px 2px #000000;
+    transition: color 0.3s ease-in-out;    
   }
 }
