@@ -23,6 +23,7 @@ export const HomeTitle = styled.h1`
   align-items: center;
   margin: 0;
   font-size: 200px;
+  text-shadow: 1px 1px #000000;
 
 
   @media screen and (max-width: 1200px) {
