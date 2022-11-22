@@ -1,3 +1,8 @@
+.nav-title{
+  text-decoration: none;
+  color: black; 
+}
+
 /* Hover Effects */
 @media screen and (min-width: 995px) {
   .nav-title:hover {
