@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { MainForm, FormInput, FormCard, MainFormButton, ImageResult, ImgWrapper, FormSelect, SelectOption } from './PostForm.elements';
+import { MainForm, FormInput, FormCard, MainFormButton, ImageResult, ImgWrapper, FormSelect, SelectOption, FormInputLabel, DefaultImg, ToolTipWrapper, DalleAsterik } from './PostForm.elements';
 import Container from 'react-bootstrap/Container';
-import './api-styles.css';
-
+import TriggerRendererProp from '../components/Tooltip/TooltipComp.js';
 
 export default function PostForm() {
   // useState will be called when the form is entered
   const [prompt, setPrompt] = useState(' ');
-  const [size, setSize] = useState('Size not entered');
+  const [size, setSize] = useState('Select A Size');
   // image is null until respone from API
   const [image, setImage] = useState(null);
 
@@ -58,7 +57,9 @@ export default function PostForm() {
       <Container>
         <MainForm onSubmit={handleSubmit}>
           <FormCard>
-            <FormInput 
+            <ToolTipWrapper><TriggerRendererProp /></ToolTipWrapper>
+            <FormInputLabel> Enter A Detailed Prompt</FormInputLabel>
+            <FormInput  
             type="text"
             name="prompt"
             value={prompt}
@@ -78,8 +79,9 @@ export default function PostForm() {
           </FormCard>
         </MainForm>
         <ImgWrapper>
-          {image === null ? <ImageResult src='images/y00t/yoot9040.webp' alt='Y00ts NFT #9040'/> : <ImageResult src={image} /> }
+          {image === null ? <DefaultImg src='images/y00t/yoot9040.webp' alt='Y00ts NFT #9040'/> : <ImageResult src={image} /> }
         </ImgWrapper>
+        <DalleAsterik>*Image generated from Dalle2</DalleAsterik>
       </Container>
     </div>
   )
