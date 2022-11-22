@@ -9,6 +9,7 @@ export const MainForm = styled.form`
 export const FormInput = styled.input`
   width: 70%;
   margin: auto;
+  margin-right: 5px;
   border-radius: 5px;
   border: 1px solid black;
   padding-left: 10px;
@@ -20,16 +21,22 @@ export const FormCard = styled.div`
   padding: 50px;
   border: 2px solid black;
   border-radius: 10px;
+  background: #666666;
+
+  @media screen and (max-width: 1200px){
+    padding: 25px;
+  }
 `;
 
 export const MainFormButton = styled.button`
   margin: auto;
   margin-top: 20px;
-  background-color: transparent;
+  background-color: #666666;
   width: 30%;
-  height: 35px;
+  height: 40px;
   border: solid 1px black;
-
+  border-radius: 3px;
+  
   &:hover {
     color: #61b38f;
     background-color: #242422;
@@ -48,9 +55,16 @@ export const ImgWrapper = styled.div`
 
 export const ImageResult = styled.img`
   margin: auto;
-  width: 400px;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 2px solid black;
+  width: 70%;
+
+  @media screen and (min-width: 1100px){
+    &:hover {
+    width: 75%;
+    transition: 0.3s ease-in-out;
+    }
+  }
 
   @media screen and (max-width: 1200px){
     width: 80%;
@@ -60,9 +74,53 @@ export const ImageResult = styled.img`
 
 export const FormSelect = styled.select`
   margin: auto;
+  margin-right: 5px;
   border-radius: 5px;
 `;
 
 export const SelectOption = styled.option`
   text-align: center;
+`;
+
+export const FormInputLabel = styled.label`
+  color: black;
+  margin-right: 10px;
+`;
+
+export const DefaultImg = styled.img`
+  margin: auto;
+  width: 512px;
+  border-radius: 8px;
+  border: 2px solid black;
+
+  @media screen and (min-width: 1100px){
+    &:hover {
+    width: 525px;
+    transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media screen and (max-width: 1200px){
+    width: 80%;
+  }
+`;
+
+export const ToolTipWrapper = styled.div`
+  visibility: hidden;
+  @media screen and (min-width: 993px){
+    float:right;
+    visibility: visible;
+  }
+`;
+
+export const DalleAsterik = styled.p`
+  margin-top: 80px;
+  margin-bottom: 5px;
+  visibility: hidden;
+  text-align: center;
+  color: black;
+
+  @media screen and (max-width: 992px) {
+    visibility: visible;
+  }
 `;
