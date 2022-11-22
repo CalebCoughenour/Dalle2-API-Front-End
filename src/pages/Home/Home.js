@@ -9,7 +9,7 @@ import './home-styles.css';
 const Home = () => {
   return (
   <>
-    <HomeBody className="color-primary-bg">
+    <HomeBody>
       <Container>
         <HomeCard className="home-card">
           <HomeTitle>Make It<br/> Art</HomeTitle>
