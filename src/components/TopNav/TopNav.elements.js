@@ -10,6 +10,14 @@ export const NavTitle = styled.h1`
   margin: auto;
   width: 18%;
   font-family: 'Megrim', cursive;
-  color: black;
+  font-weight: bold;
   font-size: 30px;
+
+  @media screen and (max-width: 901px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 601px) {
+    font-size: 40px;
+  }
 `;
