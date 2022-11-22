@@ -24,7 +24,9 @@ export const HomeTitle = styled.h1`
   margin: 0;
   font-size: 200px;
   text-shadow: 1px 1px #000000;
-
+  /* font-family: 'Rubik Glitch'; */
+  /* font-family: 'Monoton', cursive; */
+  font-family: 'Megrim', cursive;
 
   @media screen and (max-width: 1200px) {
    font-size: 150px; 
