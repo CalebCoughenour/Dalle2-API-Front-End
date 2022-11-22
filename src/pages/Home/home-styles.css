@@ -5,3 +5,9 @@
     transition: color 0.3s ease-in-out;    
   }
 }
+
+@media screen and (max-width: 995px){
+  .home-card{
+    color: #61b38f;
+  }
+}
