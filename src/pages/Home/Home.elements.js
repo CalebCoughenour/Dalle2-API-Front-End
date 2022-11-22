@@ -61,7 +61,6 @@ export const HomeCard = styled.div`
 export const HomeImage = styled.img`
   border-radius: 50%;
   width: 10%;
-  margin-left: 35px;
 
   @media screen and (max-width: 990px) {
     width: 20%;
