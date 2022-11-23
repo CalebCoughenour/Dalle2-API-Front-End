@@ -3,25 +3,30 @@ import styled from "styled-components";
 export const MainForm = styled.form`
   margin: auto;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const FormInput = styled.input`
   width: 70%;
   margin: auto;
-  margin-right: 5px;
   border-radius: 5px;
   border: 1px solid black;
   padding-left: 10px;
+
+  @media screen and (max-width: 484px) {
+    width: 100%;
+  }
 `;
 
 export const FormCard = styled.div`
   margin: auto;
-  width: 100%;
+  width: 80%;
   padding: 50px;
   border: 2px solid black;
   border-radius: 10px;
   background: #666666;
+  
 
   @media screen and (max-width: 1200px){
     padding: 25px;
@@ -53,29 +58,13 @@ export const ImgWrapper = styled.div`
   text-align: center;
 `;
 
-export const ImageResult = styled.img`
-  margin: auto;
-  border-radius: 8px;
-  border: 2px solid black;
-  width: 70%;
-
-  @media screen and (min-width: 1100px){
-    &:hover {
-    width: 75%;
-    transition: 0.3s ease-in-out;
-    }
-  }
-
-  @media screen and (max-width: 1200px){
-    width: 80%;
-  }
-`;
-
 
 export const FormSelect = styled.select`
   margin: auto;
-  margin-right: 5px;
+  margin-right: 15px;
   border-radius: 5px;
+  height: 30px;
+  width: 120px;
 `;
 
 export const SelectOption = styled.option`
@@ -93,15 +82,8 @@ export const DefaultImg = styled.img`
   border-radius: 8px;
   border: 2px solid black;
 
-  @media screen and (min-width: 1100px){
-    &:hover {
-    width: 525px;
-    transition: 0.3s ease-in-out;
-    }
-  }
-
   @media screen and (max-width: 1200px){
-    width: 80%;
+    width: 60%;
   }
 `;
 
@@ -109,18 +91,6 @@ export const ToolTipWrapper = styled.div`
   visibility: hidden;
   @media screen and (min-width: 993px){
     float:right;
-    visibility: visible;
-  }
-`;
-
-export const DalleAsterik = styled.p`
-  margin-top: 80px;
-  margin-bottom: 5px;
-  visibility: hidden;
-  text-align: center;
-  color: black;
-
-  @media screen and (max-width: 992px) {
     visibility: visible;
   }
 `;
