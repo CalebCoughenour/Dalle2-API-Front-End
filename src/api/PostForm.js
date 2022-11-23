@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import 'bootstrap/js/src/modal';
 import axios from 'axios';
-import { MainForm, FormInput, FormCard, MainFormButton, ImageResult, ImgWrapper, FormSelect, SelectOption, FormInputLabel, DefaultImg, ToolTipWrapper, DalleAsterik } from './PostForm.elements';
+import { MainForm, FormInput, FormCard, MainFormButton, ImgWrapper, FormSelect, SelectOption, FormInputLabel, DefaultImg, ToolTipWrapper } from './PostForm.elements';
 import Container from 'react-bootstrap/Container';
 import TriggerRendererProp from '../components/Tooltip/TooltipComp.js';
+import ImageZoom from '../components/ImageZoom/ImageZoom';
 
 export default function PostForm() {
   // useState will be called when the form is entered
-  const [prompt, setPrompt] = useState(' ');
+  const [prompt, setPrompt] = useState('');
   const [size, setSize] = useState('Select A Size');
+  const [responseSize, setResponseSize] = useState('');
+
   // image is null until respone from API
   const [image, setImage] = useState(null);
 
@@ -23,11 +27,14 @@ export default function PostForm() {
       n: 1,
       size: size
     }
+    // Set state of responseSize so it can be passed as prop to ImageZoom component
+    setResponseSize(size);
     // Axios API call to openai image generated, takes in body and bearer token(config)
     await axios.post('https://api.openai.com/v1/images/generations', body, config)
     .then(response => {
       // Once we receive the response we call setImage to change the state of the image being displayed
       setImage(response.data.data[0].url);
+      console.log(response);
     })
     .catch(function(error){
       // Display error if there is a problem with the call
@@ -57,6 +64,7 @@ export default function PostForm() {
       <Container>
         <MainForm onSubmit={handleSubmit}>
           <FormCard>
+            {/* Tooltip component place below here */}
             <ToolTipWrapper><TriggerRendererProp /></ToolTipWrapper>
             <FormInputLabel> Enter A Detailed Prompt</FormInputLabel>
             <FormInput  
@@ -64,7 +72,7 @@ export default function PostForm() {
             name="prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="ex: Cat's having a tea party in space, 4k, high quality, realistic"
+            placeholder="ex: Cat's having a tea party in space, light, 4k, high quality, realistic"
             />
             <FormSelect 
             name="size"
@@ -79,9 +87,9 @@ export default function PostForm() {
           </FormCard>
         </MainForm>
         <ImgWrapper>
-          {image === null ? <DefaultImg src='images/y00t/yoot9040.webp' alt='Y00ts NFT #9040'/> : <ImageResult src={image} /> }
+          {image === null ? <DefaultImg src='images/y00t/yoot9040.webp' alt='Y00ts NFT #9040'/> : <ImageZoom imageResponse={image} imageSize={responseSize} /> }
+          
         </ImgWrapper>
-        <DalleAsterik>*Image generated from Dalle2</DalleAsterik>
       </Container>
     </div>
   )
