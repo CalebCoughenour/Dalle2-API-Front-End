@@ -8,7 +8,7 @@ function TriggerRendererProp() {
     <>
       <OverlayTrigger
       placement="top"
-      overlay={<Tooltip id="button-tooltip-2">Image generator powered by Dalle2</Tooltip>}
+       overlay={<Tooltip id="button-tooltip-2">Response takes 5-10 seconds, please do not spam requests</Tooltip>}
     >
       {({ ...triggerHandler }) => (
         <div
