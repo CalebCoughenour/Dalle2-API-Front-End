@@ -34,7 +34,6 @@ export default function PostForm() {
     .then(response => {
       // Once we receive the response we call setImage to change the state of the image being displayed
       setImage(response.data.data[0].url);
-      console.log(response);
     })
     .catch(function(error){
       // Display error if there is a problem with the call
