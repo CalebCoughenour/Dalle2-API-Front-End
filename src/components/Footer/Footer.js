@@ -11,10 +11,10 @@ export default function MainFooter() {
         <Container style={{ textAlign: 'center' }}>
           <Row>
             <Col md>
-              <FooterText style={{ marginRight: '10px' }}><FooterLink>Docs</FooterLink> *</FooterText>
-              <FooterText style={{ marginRight: '10px' }}><FooterLink>Twitter</FooterLink> *</FooterText>
-              <FooterText><FooterLink>Contact</FooterLink></FooterText>
-              <DalleAsterik>*Images generated using Dalle2</DalleAsterik>
+              <FooterText style={{ marginRight: '10px' }}><FooterLink href="https://openai.com/dall-e-2/" target="_blank" rel="noopener noreferrer">Docs</FooterLink> *</FooterText>
+              <FooterText style={{ marginRight: '10px' }}><FooterLink href="https://twitter.com/makeitartai" target="_blank" rel="noopener noreferrer">Twitter</FooterLink> *</FooterText>
+              <FooterText><FooterLink href="#" target="_blank" rel="noopener noreferrer">Contact</FooterLink></FooterText>
+              <DalleAsterik>*Powered By Dalle2</DalleAsterik>
             </Col>
           </Row>
         </Container>
