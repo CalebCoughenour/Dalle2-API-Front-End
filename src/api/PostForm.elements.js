@@ -79,6 +79,7 @@ export const FormInputLabel = styled.label`
 export const DefaultImg = styled.img`
   margin: auto;
   width: 512px;
+  height: auto;
   border-radius: 8px;
   border: 2px solid black;
 

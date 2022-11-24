@@ -5,6 +5,7 @@ export const ImageResult = styled.img`
   border-radius: 8px;
   border: 2px solid black;
   width: 512px;
+  height: auto;
 
 
   animation: imageFadeInAnimation ease 5s;
