@@ -29,9 +29,9 @@ body, html {
   padding: 0;
   width: 100%;
 }
-
+/* animation to fade in on load */
 body {
-  animation: fadeInAnimation ease 4s;
+  animation: fadeInAnimation ease 5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -62,4 +62,18 @@ body {
 
 .tooltip-wrap:hover{
   cursor: pointer;
+}
+
+.modal-dialog {
+  justify-content: center;
+}
+
+.modalEscapeButton {
+  background-color: rgba(65,65,65, .9);
+}
+
+.modalEscapeButton:hover {
+  background-color: #242422;
+  color: #61b38f;
+  transition: background-color .2s ease-in-out;
 }
